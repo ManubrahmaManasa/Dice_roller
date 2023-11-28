@@ -23,17 +23,40 @@ class MainActivity : AppCompatActivity() {
         val diceroll = dice.roll()
         val diceImage: ImageView = findViewById(R.id.imageView)
         val rollText: TextView = findViewById(R.id.Textview)
+        val luckynumber = 4
+        val str: String
 
         val diceDrawableResource =  when(diceroll){
-            1 -> R.drawable.dice_1
-            2 -> R.drawable.dice_2
-            3 -> R.drawable.dice_3
-            4 -> R.drawable.dice_4
-            5 -> R.drawable.dice_5
-            else -> R.drawable.dice_6
+            1 -> {
+                str = "So sorry! You rolled a 1. Try again!"
+                R.drawable.dice_1
+            }
+            2 -> {
+                str = "Sadly, you rolled a 2. Try again!"
+                R.drawable.dice_2
+            }
+            3 -> {
+                str = "Unfortunately, you rolled a 3. Try again!"
+                R.drawable.dice_3
+            }
+            luckynumber -> {
+                str = "You Win!!!!!!!"
+                R.drawable.dice_4
+            }
+            5 -> {
+                str = "Don't cry! You rolled a 5. Try again!"
+                R.drawable.dice_5
+            }
+            else -> {
+                str = "Apologies! You rolled a 6. Try again!"
+                R.drawable.dice_6
+            }
         }
+
         diceImage.setImageResource(diceDrawableResource)
-        rollText.setText("Dice rolled : "+diceroll.toString())
+
+        rollText.text = str
+
 
 
         diceImage.contentDescription = diceroll.toString()

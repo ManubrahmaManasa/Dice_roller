@@ -23,7 +23,7 @@
         android:textSize="24sp"
         android:textStyle="italic"
         android:layout_marginTop="100dp"
-        android:layout_marginStart="140dp"/>
+        android:layout_marginStart="100dp"/>
 
     <Button
         android:id="@+id/button"
